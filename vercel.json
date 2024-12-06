@@ -4,9 +4,7 @@
     {
       "src": "frontend/package.json",
       "use": "@vercel/static-build",
-      "config": {
-        "distDir": "frontend/dist"
-      }
+      "config": { "distDir": "dist" }
     },
     {
       "src": "backend/api/index.js",
@@ -19,16 +17,21 @@
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "/backend/api/index.js"
+      "src": "/api/v1/auth/(.*)",
+      "dest": "backend/auth/index.js"
     },
     {
-      "src": "/auth/(.*)",
-      "dest": "/backend/auth/index.js"
+      "src": "/api/v1/interviews/(.*)",
+      "dest": "backend/api/index.js"
+    },
+    {
+      "src": "/api/v1/questions/(.*)",
+      "dest": "backend/api/index.js"
     },
     {
       "src": "/(.*)",
-      "dest": "/frontend/dist/$1"
+      "dest": "frontend/dist/index.html"
     }
-  ]
+  ],
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
