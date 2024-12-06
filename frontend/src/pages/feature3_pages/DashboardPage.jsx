@@ -31,14 +31,17 @@ const DashboardPage = () => {
     try {
       setIsStarting(true);
       const token = localStorage.getItem("token");
-      const response = await fetch("http://localhost:1017/api/v1/interviews", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ questions: selectedQuestions }),
-      });
+      const response = await fetch(
+        "https://careerly-oewvr9ior-sean-dustin-veranos-projects.vercel.app/api/v1/interviews",
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ questions: selectedQuestions }),
+        }
+      );
 
       if (!response.ok) throw new Error("Failed to create interview");
 

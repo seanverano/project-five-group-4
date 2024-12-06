@@ -28,7 +28,7 @@ const InterviewPage = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        `http://localhost:1017/api/v1/interviews/${id}`,
+        `https://careerly-oewvr9ior-sean-dustin-veranos-projects.vercel.app/api/v1/interviews/${id}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -62,7 +62,7 @@ const InterviewPage = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        `http://localhost:1017/api/v1/interviews/${id}/answer`,
+        `https://careerly-oewvr9ior-sean-dustin-veranos-projects.vercel.app/api/v1/interviews/${id}/answer`,
         {
           method: "POST",
           headers: {
