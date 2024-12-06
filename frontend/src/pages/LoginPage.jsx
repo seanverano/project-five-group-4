@@ -28,7 +28,7 @@ function LoginPage() {
 
     try {
       const response = await fetch(
-        "https://careerly-oewvr9ior-sean-dustin-veranos-projects.vercel.app/api/v1/auth/login",
+        `${import.meta.env.VITE_AUTH_BACKEND_URL}/api/v1/auth/login`,
         {
           method: "POST",
           headers: {
