@@ -4,29 +4,26 @@
     {
       "src": "frontend/package.json",
       "use": "@vercel/static-build",
-      "config": { "distDir": "dist" }
+      "buildCommand": "npm run build",
+      "outputDirectory": "frontend/dist"
     },
     {
-      "src": "backend/api/index.js",
+      "src": "api/auth.js",
       "use": "@vercel/node"
     },
     {
-      "src": "backend/auth/index.js",
+      "src": "api/interviews.js",
       "use": "@vercel/node"
     }
   ],
   "rewrites": [
     {
       "source": "/api/v1/auth/(.*)",
-      "destination": "/backend/auth/index.js"
+      "destination": "/api/auth.js"
     },
     {
       "source": "/api/v1/interviews/(.*)",
-      "destination": "/backend/api/index.js"
-    },
-    {
-      "source": "/api/v1/questions/(.*)",
-      "destination": "/backend/api/index.js"
+      "destination": "/api/interviews.js"
     },
     {
       "source": "/(.*)",
