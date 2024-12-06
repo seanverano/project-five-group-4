@@ -10,9 +10,12 @@ const useQuestions = () => {
   const fetchQuestions = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch("http://localhost:1017/api/v1/questions", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_AUTH_BACKEND_URL}/api/v1/questions`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
       if (!response.ok) throw new Error("Failed to fetch questions");
       const data = await response.json();
       setQuestions(data.questions);
@@ -29,14 +32,17 @@ const useQuestions = () => {
     try {
       setIsAddingQuestion(true);
       const token = localStorage.getItem("token");
-      const response = await fetch("http://localhost:1017/api/v1/questions", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ text: newQuestion }),
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_AUTH_BACKEND_URL}/api/v1/questions`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ text: newQuestion }),
+        }
+      );
 
       if (!response.ok) throw new Error("Failed to add question");
 
@@ -53,7 +59,9 @@ const useQuestions = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        `http://localhost:1017/api/v1/questions/${questionId}`,
+        `${
+          import.meta.env.VITE_AUTH_BACKEND_URL
+        }/api/v1/questions/${questionId}`,
         {
           method: "DELETE",
           headers: { Authorization: `Bearer ${token}` },
@@ -70,7 +78,9 @@ const useQuestions = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        `http://localhost:1017/api/v1/questions/${questionId}`,
+        `${
+          import.meta.env.VITE_AUTH_BACKEND_URL
+        }/api/v1/questions/${questionId}`,
         {
           method: "PATCH",
           headers: {

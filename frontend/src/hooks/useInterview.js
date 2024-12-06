@@ -8,7 +8,7 @@ const useInterview = (id, navigate) => {
       try {
         const token = localStorage.getItem("token");
         const response = await fetch(
-          `http://localhost:1017/api/v1/interviews/${id}`,
+          `${import.meta.env.VITE_AUTH_BACKEND_URL}/api/v1/interviews/${id}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
