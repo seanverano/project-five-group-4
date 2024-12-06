@@ -11,7 +11,7 @@
       "use": "@vercel/node"
     },
     {
-      "src": "backend/api/index.js",
+      "src": "backend/api/index2.js",
       "use": "@vercel/node"
     }
   ],
@@ -22,11 +22,11 @@
     },
     {
       "source": "/api/v1/interviews/(.*)",
-      "destination": "/backend/api/index.js"
+      "destination": "/backend/api/index2.js"
     },
     {
       "source": "/api/v1/questions/(.*)",
-      "destination": "/backend/api/index.js"
+      "destination": "/backend/api/index2.js"
     },
     {
       "source": "/(.*)",
