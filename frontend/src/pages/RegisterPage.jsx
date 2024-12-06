@@ -26,7 +26,7 @@ function RegisterPage() {
 
     try {
       const response = await fetch(
-        "http://localhost:1016/api/v1/auth/register",
+        "https://careerly-oewvr9ior-sean-dustin-veranos-projects.vercel.app/api/v1/auth/register",
         {
           method: "POST",
           headers: {

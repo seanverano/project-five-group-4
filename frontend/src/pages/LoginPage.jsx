@@ -27,13 +27,16 @@ function LoginPage() {
     setError("");
 
     try {
-      const response = await fetch("http://localhost:1016/api/v1/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(loginData),
-      });
+      const response = await fetch(
+        "https://careerly-oewvr9ior-sean-dustin-veranos-projects.vercel.app/api/v1/auth/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(loginData),
+        }
+      );
 
       const data = await response.json();
 
