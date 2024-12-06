@@ -20,3 +20,5 @@ app.use("/api/v1/questions", questionRoutes);
 app.listen(PORT, () => {
   console.log(`API Server running on port ${PORT}`);
 });
+
+export default app;
