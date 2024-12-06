@@ -11,7 +11,7 @@ const useQuestions = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        `${import.meta.env.VITE_AUTH_BACKEND_URL}/api/v1/questions`,
+        `${import.meta.env.VITE_API_BACKEND_URL}/api/v1/questions`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -33,7 +33,7 @@ const useQuestions = () => {
       setIsAddingQuestion(true);
       const token = localStorage.getItem("token");
       const response = await fetch(
-        `${import.meta.env.VITE_AUTH_BACKEND_URL}/api/v1/questions`,
+        `${import.meta.env.VITE_API_BACKEND_URL}/api/v1/questions`,
         {
           method: "POST",
           headers: {
@@ -60,7 +60,7 @@ const useQuestions = () => {
       const token = localStorage.getItem("token");
       const response = await fetch(
         `${
-          import.meta.env.VITE_AUTH_BACKEND_URL
+          import.meta.env.VITE_API_BACKEND_URL
         }/api/v1/questions/${questionId}`,
         {
           method: "DELETE",
@@ -79,7 +79,7 @@ const useQuestions = () => {
       const token = localStorage.getItem("token");
       const response = await fetch(
         `${
-          import.meta.env.VITE_AUTH_BACKEND_URL
+          import.meta.env.VITE_API_BACKEND_URL
         }/api/v1/questions/${questionId}`,
         {
           method: "PATCH",

@@ -28,7 +28,7 @@ const InterviewPage = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        `${import.meta.env.VITE_AUTH_BACKEND_URL}/api/v1/interviews/${id}`,
+        `${import.meta.env.VITE_API_BACKEND_URL}/api/v1/interviews/${id}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -63,7 +63,7 @@ const InterviewPage = () => {
       const token = localStorage.getItem("token");
       const response = await fetch(
         `${
-          import.meta.env.VITE_AUTH_BACKEND_URL
+          import.meta.env.VITE_API_BACKEND_URL
         }/api/v1/interviews/${id}/answer`,
         {
           method: "POST",

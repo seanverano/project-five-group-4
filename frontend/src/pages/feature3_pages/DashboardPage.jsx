@@ -32,7 +32,7 @@ const DashboardPage = () => {
       setIsStarting(true);
       const token = localStorage.getItem("token");
       const response = await fetch(
-        `${import.meta.env.VITE_AUTH_BACKEND_URL}/api/v1/interviews`,
+        `${import.meta.env.VITE_API_BACKEND_URL}/api/v1/interviews`,
         {
           method: "POST",
           headers: {
