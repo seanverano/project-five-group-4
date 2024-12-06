@@ -15,23 +15,22 @@
       "use": "@vercel/node"
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/v1/auth/(.*)",
-      "dest": "backend/auth/index.js"
+      "source": "/api/v1/auth/(.*)",
+      "destination": "/backend/auth/index.js"
     },
     {
-      "src": "/api/v1/interviews/(.*)",
-      "dest": "backend/api/index.js"
+      "source": "/api/v1/interviews/(.*)",
+      "destination": "/backend/api/index.js"
     },
     {
-      "src": "/api/v1/questions/(.*)",
-      "dest": "backend/api/index.js"
+      "source": "/api/v1/questions/(.*)",
+      "destination": "/backend/api/index.js"
     },
     {
-      "src": "/(.*)",
-      "dest": "frontend/dist/index.html"
+      "source": "/(.*)",
+      "destination": "/frontend/dist/index.html"
     }
-  ],
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  ]
 }
